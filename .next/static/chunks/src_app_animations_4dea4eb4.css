@@ -1,0 +1,249 @@
+/* [project]/src/app/animations.css [app-client] (css) */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes neonPulse {
+  0% {
+    text-shadow: 0 0 7px #00ff85, 0 0 10px #00ff85, 0 0 21px #00ff85;
+  }
+
+  50% {
+    text-shadow: 0 0 10px #00ff85, 0 0 15px #00ff85, 0 0 25px #00ff85;
+  }
+
+  100% {
+    text-shadow: 0 0 7px #00ff85, 0 0 10px #00ff85, 0 0 21px #00ff85;
+  }
+}
+
+@keyframes neonGlow {
+  0% {
+    box-shadow: 0 0 5px #00ff85, 0 0 10px #00ff85, 0 0 15px #00ff85;
+  }
+
+  50% {
+    box-shadow: 0 0 10px #00ff85, 0 0 20px #00ff85, 0 0 30px #00ff85;
+  }
+
+  100% {
+    box-shadow: 0 0 5px #00ff85, 0 0 10px #00ff85, 0 0 15px #00ff85;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 5px #2563eb33;
+  }
+
+  50% {
+    box-shadow: 0 0 15px #2563eb66;
+  }
+}
+
+@keyframes shine {
+  0% {
+    background-position: -100% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 #2563eb66;
+  }
+
+  70% {
+    box-shadow: 0 0 0 10px #2563eb00;
+  }
+
+  100% {
+    box-shadow: 0 0 #2563eb00;
+  }
+}
+
+@keyframes trailFade {
+  0% {
+    opacity: .8;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(.3);
+  }
+}
+
+.animate-fade-in {
+  animation: .5s ease-out forwards fadeIn;
+}
+
+.animate-scale-in {
+  animation: .3s ease-out forwards scaleIn;
+}
+
+.animate-slide-in {
+  animation: .4s ease-out forwards slideIn;
+}
+
+.cursor-trail {
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: screen;
+  filter: blur(1px);
+  background: #f09;
+  border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  animation: .8s linear forwards trailFade;
+  position: fixed;
+  box-shadow: 0 0 8px #f09, 0 0 16px #f09;
+}
+
+.nav-button {
+  background: linear-gradient(to right, #0000 50%, #3b82f61a 50%) 0 0 / 200% 100%;
+  border-radius: .5rem;
+  padding: .5rem 1rem;
+  transition: all .3s cubic-bezier(.4, 0, .2, 1);
+  position: relative;
+}
+
+.nav-button:hover {
+  background-position: -100% 0;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px #3b82f626;
+}
+
+.nav-button:active {
+  transform: translateY(0);
+}
+
+.hover-scale {
+  transition: all .3s cubic-bezier(.4, 0, .2, 1);
+}
+
+.hover-scale:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 30px #0000001f;
+}
+
+.hover-brightness {
+  transition: all .3s;
+}
+
+.hover-brightness:hover {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+}
+
+.interactive-hover {
+  transition: all .3s cubic-bezier(.4, 0, .2, 1);
+  position: relative;
+}
+
+.interactive-hover:hover {
+  filter: drop-shadow(0 0 8px #ffffff80);
+  color: #fff;
+  text-shadow: none;
+}
+
+.interactive-hover:active {
+  transform: translateY(0);
+}
+
+.float-animation {
+  animation: 3s ease-in-out infinite float;
+}
+
+.icon-bounce {
+  animation: 2s infinite float;
+}
+
+.drop-zone-active {
+  animation: 1.5s infinite neonGlow;
+  border-color: #00ff85 !important;
+  box-shadow: 0 0 15px #00ff85 !important;
+}
+
+.copy-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.copy-button:after {
+  content: "";
+  border-radius: inherit;
+  background: #ffffff1a;
+  width: 100%;
+  height: 100%;
+  transition: transform .3s;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%)scale(0);
+}
+
+.copy-button:active:after {
+  transform: translate(-50%, -50%)scale(2);
+}
+
+.link-appear {
+  opacity: 0;
+  animation: .3s forwards slideUp;
+  transform: translateY(10px);
+}
+
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/*# sourceMappingURL=src_app_animations_4dea4eb4.css.map*/
